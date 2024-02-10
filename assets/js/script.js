@@ -35,15 +35,27 @@ window.addEventListener("scroll", function(){
 // search box toggle
 
 const searchbtn=document.querySelector("[data-search-btn]");
-const searchContainer= documment.querySelector("[data-search-container]");
-const searchSubmission= documment.querySelector("[data-search-submit-btn]");
-const searchClose= documment.querySelector("[data-search-close-btn]");
+console.log(searchbtn);
+// const searchContainer= documment.querySelector("[data-search-container]");
 
-const searchBoxElements = [searchbtn,searchContainer,searchClose];
+const searchContainer1= document.getElementsByClassName("search-container");
+console.log(searchContainer1);
+
+// const searchSubmission= documment.querySelector("[data-search-submit-btn]");
+
+const searchClose= documment.getElementsByClassName("search-close-btn");
+console.log(searchClose);
+const searchBoxElements = [searchbtn,searchContainer1,searchClose];
 
 for(let i=0;i<searchBoxElements.length;i++){
     searchBoxElements[i].addEventListener("click", function(){
-        searchContainer.classList.toggle("active");
+        searchContainer1.classList.toggle("active");
         document.body.classList.toggle("active");
     })
 }
+
+
+// delivery boy
+
+const delivery_boy = document.querySelector("[data-delivery-boy]");
+console.log(delivery_boy);

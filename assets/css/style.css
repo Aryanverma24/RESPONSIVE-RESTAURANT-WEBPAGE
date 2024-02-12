@@ -855,3 +855,149 @@ letter-spacing: -2px;
   transform: translateX(-80px);
   transition: var(--transition-2);
 }
+
+
+/* testimonial */
+
+.testi{
+  text-align: center;
+}
+
+.testi .section-title{
+  margin-block:10px 20px;
+}
+
+.testi .section-text{
+  max-width: 44ch;
+  margin-inline: auto;
+  margin-block-end: 30px;
+}
+
+.testi-card{
+  background-color: var(--white);
+  padding: 40px;
+  height: 100%;
+  text-align: left;
+  box-shadow: var(--shadow-2);
+}
+
+.testi-card .profile-wrapper{
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.testi-card .avatar{
+  min-width: max-content;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.testi-card  .testi-name{
+  margin-block-end: 2px;
+}
+
+.testi-card .testi-title{
+  font-family: var(--ff-rubik);
+  font-size: var(--fs-4);
+}
+
+.testi-card .testi-text{
+  margin-block: 20px 15px;
+}
+
+.testi-item{
+  min-width: 100%;
+  scroll-snap-align: start;
+}
+
+/* banner */
+
+.banner{
+  color: var(--white);
+}
+
+.banner-list{
+  display: grid;
+  gap: 10px;
+}
+
+.banner-lg{
+  height: 430px;
+}
+.banner-sm{
+  height: 200px;
+}
+.banner-md{
+  height: 240px;
+}
+
+.banner-card{
+  position: relative;
+  background-color: var(--gainsboro);
+  height: 100%;
+  box-shadow: var(--shadow-2);
+  overflow: hidden;
+}
+
+.banner-card .banner-img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1);
+  transition: var(--transition-2);
+}
+
+.banner-card:is(:hover, :focus-within) .banner-img{
+  transform: scale(1.05);
+}
+
+.banner-item-content{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 20px;
+  right: 20px;
+  max-height: calc(100% - 30%);
+}
+
+.banner-md .banner-item-content{
+  left: 50%;
+}
+
+.banner-subtitle,
+.banner-subtitle{
+  font-family: var(--ff-rubik);
+  font-weight: var(--fw-600);
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+}
+
+.banner-lg .banner-subtitle{
+  font-size: var(--fs-2);
+  margin-block-end: 10px;}
+
+.banner-lg .banner-title{
+  font-size: var(--fs-1);
+  max-width: 16ch;
+}
+
+:is(.banner-md, .banner-sm) .banner-title{
+    font-size: var(--fs-2);
+    max-width: 10ch;
+}
+
+.banner-card .banner-text{
+  margin-block: 10px 15px;
+}
+
+.banner-card .btn{
+  --bg-color: var(--dark-orange);
+  --height: 40px;
+  --padding-inline: 25px;
+}
+
+.banner-card .btn:is(:hover, :focus) {background-color: var(--rich-black-fogra-29);}
+
+
+

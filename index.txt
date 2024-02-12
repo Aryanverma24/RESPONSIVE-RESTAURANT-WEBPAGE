@@ -207,7 +207,7 @@ Our Customers Reviews
 Food is any substance consumed to provide nutritional
 support for an organism.
 
-alt = Robert William
+alt = 
 
 Robert William
 
@@ -217,7 +217,7 @@ CEO Kingfisher
 
 <ion-icon name="star"></ion-icon>
 
-Thomas Josef
+Thomas JosefRobert William
 
 CEO Getforce
 

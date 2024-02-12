@@ -35,21 +35,15 @@ window.addEventListener("scroll", function(){
 // search box toggle
 
 const searchbtn=document.querySelector("[data-search-btn]");
-console.log(searchbtn);
-// const searchContainer= documment.querySelector("[data-search-container]");
+const searchContainer= documment.querySelector("[data-search-container]");
+const searchSubmission= documment.querySelector("[data-search-submit-btn]");
+const searchClose= documment.querySelector("[data-search-close-btn]");
 
-const searchContainer1= document.getElementsByClassName("search-container");
-console.log(searchContainer1);
-
-// const searchSubmission= documment.querySelector("[data-search-submit-btn]");
-
-const searchClose= documment.getElementsByClassName("search-close-btn");
-console.log(searchClose);
-const searchBoxElements = [searchbtn,searchContainer1,searchClose];
+const searchBoxElements = [searchbtn,searchContainer,searchClose];
 
 for(let i=0;i<searchBoxElements.length;i++){
     searchBoxElements[i].addEventListener("click", function(){
-        searchContainer1.classList.toggle("active");
+        searchContainer.classList.toggle("active");
         document.body.classList.toggle("active");
     })
 }
@@ -57,5 +51,25 @@ for(let i=0;i<searchBoxElements.length;i++){
 
 // delivery boy
 
-const delivery_boy = document.querySelector("[data-delivery-boy]");
-console.log(delivery_boy);
+const deliveryBoy = document.querySelector("[data-delivery-boy]");
+
+let deliveryBoyMove = -80;
+let lastScrollPos = 0;
+
+window.addEventListener("scroll", function(){
+    let deliveryBoyTopPos = deliveryBoy.getBoundingClientRect().top;
+    if(deliveryBoyTopPos < 500 && deliveryBoyTopPos > -250){
+        let activeScrollPos = window.scrollY;
+
+        if(lastScrollPos < activeScrollPos){
+            deliveryBoyMove++;
+        }
+        else{
+            deliveryBoyMove--;
+        }
+
+        lastScrollPos = activeScrollPos;
+
+        deliveryBoy.style.transform = 'translateX(${deliveryBoyMove}px)';
+    }
+});

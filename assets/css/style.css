@@ -1209,6 +1209,14 @@ letter-spacing: -2px;
 .footer-list address{
   max-width: 20ch;
 }
+.footer-list-items{
+  display: flex;
+  gap: 12px;
+}
+
+.footer-list-icons{
+  padding-top: 5px;
+}
 
 .footer-form{
   background-color: var(--white);

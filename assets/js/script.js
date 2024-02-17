@@ -18,16 +18,19 @@ for(let i=0;i<navlink.lentgh;i++){
     });
 }
 
-// haeder sticky
+// haeder sticky & back to top btn
 
 const header=document.querySelector("[data-header]");
+const backTopBtn = document.querySelector("[data-back-top-btn]");
 
 window.addEventListener("scroll", function(){
     if(this.window.scrollY > 100){
         header.classList.add("active");
+        backTopBtn.classList.add("active");
     }
     else{
         header.classList.remove("active");
+        backTopBtn.classList.remove("active");
     }
 });
 
@@ -35,9 +38,9 @@ window.addEventListener("scroll", function(){
 // search box toggle
 
 const searchbtn=document.querySelector("[data-search-btn]");
-const searchContainer= documment.querySelector("[data-search-container]");
-const searchSubmission= documment.querySelector("[data-search-submit-btn]");
-const searchClose= documment.querySelector("[data-search-close-btn]");
+const searchContainer= document.querySelector("[data-search-container]");
+const searchSubmission= document.querySelector("[data-search-submit-btn]");
+const searchClose= document.querySelector("[data-search-close-btn]");
 
 const searchBoxElements = [searchbtn,searchContainer,searchClose];
 
@@ -52,14 +55,16 @@ for(let i=0;i<searchBoxElements.length;i++){
 // delivery boy
 
 const deliveryBoy = document.querySelector("[data-delivery-boy]");
-
-let deliveryBoyMove = -80;
+console.log(deliveryBoy)
+let deliveryBoyMove = -50;
 let lastScrollPos = 0;
 
 window.addEventListener("scroll", function(){
     let deliveryBoyTopPos = deliveryBoy.getBoundingClientRect().top;
+    console.log(deliveryBoyTopPos);
     if(deliveryBoyTopPos < 500 && deliveryBoyTopPos > -250){
         let activeScrollPos = window.scrollY;
+        console.log(activeScrollPos)
 
         if(lastScrollPos < activeScrollPos){
             deliveryBoyMove++;
@@ -67,9 +72,10 @@ window.addEventListener("scroll", function(){
         else{
             deliveryBoyMove--;
         }
+        // console.log(`${a}`)
 
         lastScrollPos = activeScrollPos;
 
-        deliveryBoy.style.transform = 'translateX(${deliveryBoyMove}px)';
+        deliveryBoy.style.transform = `translateX(${deliveryBoyMove}px)`;
     }
 });
